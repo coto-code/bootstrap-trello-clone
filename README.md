@@ -80,32 +80,24 @@ gem 'acts_as_list'
 ```bash
 bundle install
 ```
+## Основные модели
 
-## Доски
+### Доски
 Генерируем модель `Board`
 ```bash
 rails generate model Board name:string
 ```
-Произвести миграцию
-```bash
-rails db:migrate
-```
-
-## Списки
+### Списки
 Генерируем модель `List`
 ```bash
 rails generate model List board:references name:string position:integer
 ```
-Произвести миграцию
-```bash
-rails db:migrate
-```
-
-## Карточки
+### Карточки
 Генерируем модель `Card`
 ```bash
 rails generate model Card list:references name:string content:text position:integer
 ```
+
 Произвести миграцию
 ```bash
 rails db:migrate
