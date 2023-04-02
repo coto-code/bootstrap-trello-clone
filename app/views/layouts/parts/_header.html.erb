@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bootstrap trello</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Главная', root_path, class: 'nav-link' %>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <% if user_signed_in? %>
+            <div>
+               <strong><%= current_user.email %></strong>
+            </div>
+            <%= link_to 'Выход', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark ms-4' %>
+        <% else %>
+            <%= link_to 'Вход', new_user_session_path, class: 'btn btn-link text-body text-decoration-none' %>
+            <%= link_to 'Регистрация', new_user_registration_path, class: 'btn btn-outline-dark ms-2' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
