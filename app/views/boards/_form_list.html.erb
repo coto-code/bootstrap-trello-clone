@@ -1,0 +1,22 @@
+<%= form_with(model: [ board, list ], local: true) do |form| %>
+  <% if list.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger mb-3">
+      <h4><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h4>
+
+      <ul>
+      <% list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :name, 'Добавьте список', class: 'form-label' %>
+    <%= form.text_field :name, id: :board_name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Добавить", class: 'btn btn-primary' %>
+  </div>
+<% end %>

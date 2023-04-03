@@ -1,0 +1,50 @@
+.lists {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, 280px);
+  grid-auto-flow: column;
+}
+
+.fancy-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0)
+}
+
+.fancy-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px
+}
+
+.fancy-scrollbar::-webkit-scrollbar-button:end:increment,
+.fancy-scrollbar::-webkit-scrollbar-button:start:decrement {
+  background: #0000;
+  display: none
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track-piece {
+  background: #091e4214
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:start {
+  border-radius: 4px 4px 0 0
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:end {
+  border-radius: 0 0 4px 4px
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:start {
+  border-radius: 4px 0 0 4px
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:end {
+  border-radius: 0 4px 4px 0
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb:horizontal,
+.fancy-scrollbar::-webkit-scrollbar-thumb:vertical {
+  background: #091e4221;
+  border-radius: 4px;
+  display: block;
+  height: 48px
+}

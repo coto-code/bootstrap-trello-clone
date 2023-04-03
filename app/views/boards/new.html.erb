@@ -1,0 +1,27 @@
+<h2 class="mb-3">Новая доска</h2>
+
+<%= form_with(model: @board, local: true) do |form| %>
+  <% if @board.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger mb-3">
+      <h4><%= pluralize(@board.errors.count, "error") %> prohibited this board from being saved:</h4>
+
+      <ul>
+      <% @board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, id: :board_name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Создать", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+  

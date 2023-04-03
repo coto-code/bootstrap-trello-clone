@@ -1,5 +1,10 @@
 # Bootstrap trello-clone
 
+Запуск
+```bash
+./bin/dev
+```
+
 ## Контроллер главной страницы
 ```bash
 rails g controller home index
@@ -101,4 +106,21 @@ rails generate model Card list:references name:string content:text position:inte
 Произвести миграцию
 ```bash
 rails db:migrate
+```
+
+## Страница доски
+
+Генерируем контроллер доски
+```
+rails generate controller Boards
+```
+
+Генерируем контроллер списка
+```
+rails generate controller Lists
+```
+
+Генерируем контроллер карточек
+```
+rails generate controller Cards
 ```

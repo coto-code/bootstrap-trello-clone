@@ -1,0 +1,27 @@
+<%= form_with(model: [ board, list, card ], local: true) do |form| %>
+  <% if card.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger mb-3">
+      <h4><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h4>
+
+      <ul>
+      <% card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, id: :list_name, class: 'form-control' %>
+  </div>  
+  
+  <div class="field mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_field :content, id: :list_name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Добавить", class: 'btn btn-primary' %>
+  </div>
+<% end %>
