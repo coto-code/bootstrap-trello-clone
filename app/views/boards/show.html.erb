@@ -15,7 +15,7 @@
           <%= list.name %>
         </div>
 
-        <%= link_to 'Удалить', board_list_path(@board, list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-sm btn-light' %>
+        <%= link_to 'Удалить', board_list_path(@board, list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'link-secondary fs-6 text-decoration-none' %>
       </div>
 
         <% list.cards.each do |card| %>
